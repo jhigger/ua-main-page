@@ -3,14 +3,15 @@ import Link from "next/link";
 
 const Navbar = () => {
 	const navItems = [
-		{ name: "Dashboard", link: "http://dashboard.utilityape.com/" },
 		{ name: "Client", link: "http://client.utilityape.com/" },
 		{ name: "Holders", link: "https://holders.utilityape.com/" },
+		{ name: "Mutate", link: "https://mutate.utilityape.com/" },
 		{ name: "Raid", link: "https://pay-to-raid.utilityape.com/" },
+		{ name: "Dashboard", link: "http://dashboard.utilityape.com/" },
 	];
 
 	return (
-		<nav className="w-full pointer-events-none container sticky top-0 z-20 mx-auto">
+		<nav className="container pointer-events-none sticky top-0 z-20 mx-auto w-full">
 			<div className="absolute mt-6 w-full">
 				<div className="flex flex-row justify-between gap-4 px-4">
 					<Icon />

@@ -4,6 +4,7 @@ import Head from "next/head";
 import CTA from "../components/CTA";
 import HeroImage from "../components/HeroImage";
 import HeroTitle from "../components/HeroTitle";
+import TheCollections from "../components/TheCollections";
 
 const Home: NextPage = () => {
 	return (
@@ -17,8 +18,7 @@ const Home: NextPage = () => {
 				<main className="container mx-auto  w-full">
 					<HeroTitle />
 					<CTA />
-					{/* <PopularTools />
-					<TheCollections /> */}
+					<TheCollections />
 				</main>
 			</div>
 		</>

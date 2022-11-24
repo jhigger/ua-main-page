@@ -86,7 +86,7 @@ const Navbar = () => {
 	return (
 		<nav
 			id="header"
-			className="font-poppins fixed top-0 z-50 w-full text-white transition duration-300 ease-in-out"
+			className="font-poppins fixed top-0 z-50 w-full bg-black text-white transition duration-300 ease-in-out"
 		>
 			<div className="container mx-auto mt-0 flex w-full flex-wrap items-center justify-between p-4">
 				<a href="https://utilityape.com/">

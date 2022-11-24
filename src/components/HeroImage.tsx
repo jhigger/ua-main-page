@@ -6,7 +6,7 @@ const HeroImage = () => {
 				<img
 					className="h-full w-full object-cover object-center"
 					src="https://utilityape.com/assets/images/backgroup/bg-1.jpg"
-					alt="Famous Foxes"
+					alt="Utility APE"
 				/>
 				<div className="absolute top-0 left-0 z-10 h-full w-full bg-gradient-to-b from-transparent to-black"></div>
 			</div>

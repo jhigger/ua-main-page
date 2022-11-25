@@ -26,14 +26,14 @@ const CTA = () => {
 					return (
 						<li
 							key={idx}
-							className="z-10 w-max rounded-full border hover:bg-white hover:text-black"
+							className="z-10 w-max rounded-full border transition duration-300 ease-in-out hover:scale-110 hover:bg-white hover:text-black"
 						>
 							<a
 								href={item.link}
 								rel="noreferrer"
 								className="flex items-center justify-start gap-4 px-4 py-2 md:justify-center"
 							>
-								{item.icon}
+								<div className="py-2">{item.icon}</div>
 								<span className="text-base uppercase md:text-xl">
 									{item.name}
 								</span>

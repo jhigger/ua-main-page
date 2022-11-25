@@ -1,139 +1,155 @@
-import Image from "next/image";
-import { useEffect, useState } from "react";
+/* eslint-disable @next/next/no-img-element */
+import Link from "next/link";
+import { useState } from "react";
 
 const Navbar = () => {
 	const [state, setState] = useState(false);
-	// const links = [
-	// 	{ href: "#benefits", text: "Benefits" },
-	// 	{ href: "#table", text: "Table" },
-	// 	{ href: "#dashboard", text: "Dashboard" },
-	// 	{ href: "#about", text: "About" },
-	// 	{ href: "#collections", text: "Collections" },
-	// 	{ href: "#testimonials", text: "Testimonials" },
-	// 	{ href: "#raid", text: "Raid" },
-	// 	{ href: "#faqs", text: "FAQs" },
-	// ];
 
-	const links = [
-		{ text: "Client", href: "http://client.utilityape.com/" },
-		{ text: "Holders", href: "https://holders.utilityape.com/" },
-		{ text: "Mutate", href: "https://mutate.utilityape.com/" },
-		{ text: "Raid", href: "https://pay-to-raid.utilityape.com/" },
-		{ text: "Dashboard", href: "http://dashboard.utilityape.com/" },
+	const navItems = [
+		{ name: "Client", link: "http://client.utilityape.com/" },
+		{ name: "Holders", link: "https://holders.utilityape.com/" },
+		{ name: "Mutate", link: "https://mutate.utilityape.com/" },
+		{ name: "Raid", link: "https://pay-to-raid.utilityape.com/" },
+		{ name: "Dashboard", link: "http://dashboard.utilityape.com/" },
 	];
 
-	useEffect(() => {
-		let scrollpos = window.scrollY;
-		const header = document.getElementById("header");
-		const navcontent = document.getElementById("nav-content");
-		const navaction = document.getElementById("navAction");
-		const toToggle = document.querySelectorAll(".toggleColour");
-
-		const dark = () => {
-			header?.classList.add("bg-black");
-			navaction?.classList.remove("bg-white");
-			navaction?.classList.add("gradient");
-			navaction?.classList.remove("text-white");
-			navaction?.classList.add("text-white");
-			//Use to switch toggleColour colours
-			for (let i = 0; i < toToggle.length; i++) {
-				toToggle[i]?.classList.remove("text-white");
-				toToggle[i]?.classList.add("text-white");
-			}
-			header?.classList.remove("bg-opacity-50");
-			header?.classList.add("shadow");
-			navcontent?.classList.remove("bg-gray-100");
-			navcontent?.classList.add("bg-white");
-		};
-
-		const light = () => {
-			navaction?.classList.remove("gradient");
-			navaction?.classList.add("bg-white");
-			navaction?.classList.remove("text-white");
-			navaction?.classList.add("text-white");
-			//Use to switch toggleColour colours
-			for (let i = 0; i < toToggle.length; i++) {
-				toToggle[i]?.classList.remove("text-white");
-				toToggle[i]?.classList.add("text-white");
-			}
-
-			header?.classList.add("bg-opacity-50");
-			header?.classList.remove("shadow");
-			navcontent?.classList.remove("bg-white");
-			navcontent?.classList.add("bg-gray-100");
-		};
-
-		scrollpos > 260 || state ? dark() : light();
-
-		const handleScroll = () => {
-			/*Apply classes for slide in bar*/
-			scrollpos = window.scrollY;
-
-			if (scrollpos > 260 || state) {
-				dark();
-			} else {
-				light();
-			}
-		};
-
-		document.addEventListener("scroll", handleScroll);
-
-		return () => {
-			document.removeEventListener("scroll", handleScroll);
-		};
-	}, [state]);
-
 	return (
-		<nav
-			id="header"
-			className="font-poppins fixed top-0 z-50 w-full bg-black text-white transition duration-300 ease-in-out"
-		>
-			<div className="container mx-auto mt-0 flex w-full flex-wrap items-center justify-between p-4">
-				<a href="https://utilityape.com/">
-					<div className="toggleColour flex items-center gap-4 text-2xl font-bold text-white no-underline hover:no-underline lg:text-4xl">
-						<Image
-							priority
-							loading="eager"
-							src="/assets/utilityape.png"
-							alt="icon"
-							width={32}
-							height={32}
-						/>
-						Utility APE
-					</div>
-				</a>
-				<div className="block pr-4 lg:hidden">
-					<button
-						id="nav-toggle"
-						className="focus:shadow-outline flex transform items-center p-1 text-white transition duration-300 ease-in-out hover:scale-105 hover:text-gray-900 focus:outline-none"
-						onClick={() => setState(!state)}
+		<nav className="container sticky top-0 z-20 mx-auto w-full">
+			<div className="absolute mt-6 w-full">
+				<div className="flex flex-row justify-between gap-2 px-4">
+					<Logo />
+					{/* <Announcement
+						href="#"
+						text="Marmalade, our art commission marketplace is now live!"
+					/> */}
+					<div
+						className={`rounded-3xl bg-black p-2 ${
+							state ? "block" : "hidden"
+						}`}
 					>
-						{state ? <CloseIcon /> : <MenuIcon />}
-					</button>
-				</div>
-				<div
-					className={`z-20 mt-8 w-full flex-grow p-4 lg:mt-0 lg:flex lg:w-auto lg:items-center lg:bg-transparent lg:p-0 ${
-						state ? "block" : "hidden"
-					}`}
-				>
-					<ul className="flex-1 flex-wrap items-center justify-end md:flex">
-						{links.map((link, idx) => {
-							return (
-								<li key={idx} className="mr-2">
-									<a
-										className="toggleColour inline-block py-2 px-4 text-base font-bold text-white no-underline"
-										href={link.href}
-									>
-										{link.text}
-									</a>
-								</li>
-							);
-						})}
+						<ul className="items-center justify-center md:flex">
+							{navItems.map((item, idx) => {
+								return (
+									<li key={idx}>
+										<a
+											className="inline-block py-2 px-4 text-base font-bold text-white no-underline"
+											href={item.link}
+										>
+											{item.name}
+										</a>
+									</li>
+								);
+							})}
+						</ul>
+					</div>
+					<div className="h-16 w-16 rounded-full bg-black md:hidden">
+						<button
+							className="flex transform items-center justify-center p-2 text-white transition duration-300 ease-in-out hover:scale-105 hover:text-gray-900 focus:outline-none"
+							onClick={() => setState(!state)}
+						>
+							{state ? <CloseIcon /> : <MenuIcon />}
+						</button>
+					</div>
+					<ul className="pointer-events-auto ml-auto hidden font-bebas text-xs uppercase sm:flex">
+						<NavItemContainer>
+							<li className="my-auto mx-4 flex h-full items-center align-middle">
+								{navItems.map((item) => {
+									return (
+										<NavLink
+											key={item.name}
+											name={item.name}
+											link={item.link}
+										/>
+									);
+								})}
+							</li>
+						</NavItemContainer>
 					</ul>
+					{/* <ConnectButton /> */}
 				</div>
 			</div>
-			<hr className="my-0 border-b border-gray-100 py-0 opacity-25" />
 		</nav>
+	);
+};
+
+const NavItemContainer = ({
+	children,
+}: {
+	children: JSX.Element | string | null;
+}) => {
+	return (
+		<div className="cut-corners h-full border-y-2 border-white border-opacity-20 bg-black bg-opacity-50 text-white">
+			{children}
+		</div>
+	);
+};
+
+const Logo = () => {
+	return (
+		<Link href="/">
+			<a className="pointer-events-auto h-16 w-16 flex-shrink-0 justify-center rounded-full bg-black align-middle text-white sm:h-12 sm:w-12 xl:h-16 xl:w-16">
+				<img
+					className="h-auto w-auto"
+					src="/assets/utilityape.png"
+					alt="Utility Ape Icon"
+				/>
+			</a>
+		</Link>
+	);
+};
+
+const Announcement = ({ href, text }: { href: string; text: string }) => {
+	return (
+		<a className="pointer-events-auto mr-auto hidden lg:block" href={href}>
+			<NavItemContainer>
+				<div className="my-auto mr-4 flex h-full items-center">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						strokeWidth="2"
+						stroke="currentColor"
+						aria-hidden="true"
+						className="ml-3 mr-2 h-5 w-5 xl:ml-4 xl:mr-3 xl:h-6 xl:w-6"
+					>
+						<path
+							strokeLinecap="round"
+							strokeLinejoin="round"
+							d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"
+						></path>
+					</svg>
+					<div className="w-[20vw] xl:w-[30vw]">
+						<div className="flex h-6 items-center overflow-hidden truncate px-1 font-bebas text-lg tracking-widest xl:text-xl">
+							{text}
+						</div>
+					</div>
+				</div>
+			</NavItemContainer>
+		</a>
+	);
+};
+
+const NavLink = ({ name, link }: { name: string; link: string }) => {
+	return (
+		<Link href={link}>
+			<a className="hover:cut-border px-4 py-1 text-base tracking-widest hover:text-white xl:text-lg">
+				{name}
+			</a>
+		</Link>
+	);
+};
+
+const ConnectButton = () => {
+	return (
+		<div className="pointer-events-auto mx-4 flex flex-shrink-0 font-bebas sm:mx-0">
+			<button
+				className="cut-corners hidden h-full w-full flex-row items-center justify-center border-y-2 border-white border-opacity-20 py-2.5 px-4 text-lg uppercase
+					leading-loose tracking-widest text-white hover:border-black hover:bg-black hover:text-black before:hover:bg-neutral-100 before:hover:bg-opacity-100 sm:flex sm:text-base xl:text-lg"
+				type="button"
+			>
+				Connect Wallet
+			</button>
+		</div>
 	);
 };
 
@@ -141,7 +157,7 @@ const CloseIcon = () => {
 	return (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
-			className="h-6 w-6"
+			className="h-full w-full"
 			viewBox="0 0 20 20"
 			fill="currentColor"
 		>
@@ -158,7 +174,7 @@ const MenuIcon = () => {
 	return (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
-			className="h-6 w-6"
+			className="h-full w-full"
 			fill="none"
 			viewBox="0 0 24 24"
 			stroke="currentColor"

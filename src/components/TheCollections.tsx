@@ -11,7 +11,7 @@ const TheCollections = () => {
 			collectionSize: "1,700",
 			desc: "It appears that these potions have some kind of effect on the incubated ape.",
 			marketPlace: "https://www.magiceden.io/marketplace/utility_potion",
-			image: "/assets/UA-potion01.jpg",
+			image: "/assets/UA-potion01.png",
 		},
 		{
 			bg: "bg-blue-500",
@@ -20,7 +20,7 @@ const TheCollections = () => {
 			collectionSize: "3,600",
 			desc: "The Gen 1 NFTs allow holders to engage-and-earn with our own bots on our Utility APE server, and also provide discounts for implementation of these bots on other servers.",
 			marketPlace: "https://www.magiceden.io/marketplace/utility_ape",
-			image: "/assets/UA-Gen1.jpg",
+			image: "/assets/UA-Gen1.png",
 		},
 		{
 			bg: "bg-indigo-500",
@@ -30,7 +30,7 @@ const TheCollections = () => {
 			desc: "The Gen 2 NFTs holder receive double the benefits of a single Gen 1 ape as well as additional perks not present in Gen 1 such as revenue sharing.",
 			marketPlace:
 				"https://www.magiceden.io/marketplace/utility_ape_gen_2",
-			image: "/assets/UA-Gen2.jpg",
+			image: "/assets/UA-Gen2.png",
 		},
 		{
 			bg: "bg-purple-500",
@@ -119,6 +119,8 @@ const CollectionItem = ({
 								alt={`Image of ${title}`}
 								width="320"
 								height="320"
+								loading="eager"
+								priority
 							/>
 						</div>
 					)}

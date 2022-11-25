@@ -26,26 +26,26 @@ const TheCollections = () => {
 			bg: "bg-indigo-500",
 			title: "Gen 2 Apes",
 			subTitle: "The Generation 2 Collection",
-			collectionSize: "3,200",
+			collectionSize: "3,000",
 			desc: "The Gen 2 NFTs holder receive double the benefits of a single Gen 1 ape as well as additional perks not present in Gen 1 such as revenue sharing.",
 			marketPlace:
 				"https://www.magiceden.io/marketplace/utility_ape_gen_2",
 			image: "/assets/UA-Gen2.jpg",
 		},
-		// {
-		// 	bg: "bg-purple-500",
-		// 	title: "Pixel",
-		// 	subTitle: "The Pixel Collection",
-		// 	collectionSize: "?",
-		// 	desc: "Coming Soon!",
-		// },
-		// {
-		// 	bg: "bg-red-500",
-		// 	title: "1:1",
-		// 	subTitle: "The Honorary Collection",
-		// 	collectionSize: "?",
-		// 	desc: "Coming Soon!",
-		// },
+		{
+			bg: "bg-purple-500",
+			title: "Pixel",
+			subTitle: "The Pixel Collection",
+			collectionSize: "?",
+			desc: "Coming Soon!",
+		},
+		{
+			bg: "bg-red-500",
+			title: "1:1",
+			subTitle: "The Honorary Collection",
+			collectionSize: "?",
+			desc: "Coming Soon!",
+		},
 	];
 
 	return (

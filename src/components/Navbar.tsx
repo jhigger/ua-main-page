@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { useState } from "react";
+import DropDownMenu, { DDMItem } from "./DropDownMenu";
 
 const Navbar = () => {
 	const [state, setState] = useState(false);
@@ -10,7 +11,13 @@ const Navbar = () => {
 		{ name: "Holders", link: "https://holders.utilityape.com/" },
 		{ name: "Mutate", link: "https://mutate.utilityape.com/" },
 		{ name: "Raid", link: "https://pay-to-raid.utilityape.com/" },
-		{ name: "Dashboard", link: "http://dashboard.utilityape.com/" },
+		// { name: "Dashboard", link: "http://dashboard.utilityape.com/" },
+	];
+
+	const dropDownItems: DDMItem[] = [
+		{
+			label: "Coming soon!",
+		},
 	];
 
 	return (
@@ -50,10 +57,24 @@ const Navbar = () => {
 							{state ? <CloseIcon /> : <MenuIcon />}
 						</button>
 					</div>
-					<ul className="pointer-events-auto ml-auto hidden font-bebas text-xs uppercase sm:flex">
+					<ul className="pointer-events-auto ml-auto hidden font-bebas uppercase sm:flex">
 						<NavItemContainer>
 							<li className="my-auto mx-4 flex h-full items-center align-middle">
-								{navItems.map((item) => {
+								{navItems.map((item, idx) => {
+									if (idx === navItems.length - 1) {
+										return (
+											<div
+												key="last-item"
+												className="mr-32"
+											>
+												<NavLink
+													name={item.name}
+													link={item.link}
+												/>
+											</div>
+										);
+									}
+
 									return (
 										<NavLink
 											key={item.name}
@@ -64,6 +85,12 @@ const Navbar = () => {
 								})}
 							</li>
 						</NavItemContainer>
+						<li className="absolute right-4 my-auto mx-4 flex h-full items-center align-middle text-white">
+							<DropDownMenu
+								items={dropDownItems}
+								label="Dashboard"
+							/>
+						</li>
 					</ul>
 					{/* <ConnectButton /> */}
 				</div>

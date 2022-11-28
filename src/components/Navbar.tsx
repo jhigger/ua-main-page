@@ -11,7 +11,7 @@ const Navbar = () => {
 		{ name: "Holders", link: "https://holders.utilityape.com/" },
 		{ name: "Mutate", link: "https://mutate.utilityape.com/" },
 		{ name: "Raid", link: "https://pay-to-raid.utilityape.com/" },
-		// { name: "Dashboard", link: "http://dashboard.utilityape.com/" },
+		{ name: "Dashboard", link: "http://dashboard.utilityape.com/" },
 	];
 
 	const dropDownItems: DDMItem[] = [
@@ -47,6 +47,18 @@ const Navbar = () => {
 									</li>
 								);
 							})}
+							{dropDownItems.map((item, idx) => {
+								return (
+									<li key={idx}>
+										<a
+											className="inline-block py-2 px-4 text-base font-bold text-white no-underline"
+											href={item.link || "#"}
+										>
+											{item.label}
+										</a>
+									</li>
+								);
+							})}
 						</ul>
 					</div>
 					<div className="h-16 w-16 rounded-full bg-black md:hidden">
@@ -65,7 +77,7 @@ const Navbar = () => {
 										return (
 											<div
 												key="last-item"
-												className="mr-32"
+												className="mr-16"
 											>
 												<NavLink
 													name={item.name}
@@ -86,10 +98,7 @@ const Navbar = () => {
 							</li>
 						</NavItemContainer>
 						<li className="absolute right-4 my-auto mx-4 flex h-full items-center align-middle text-white">
-							<DropDownMenu
-								items={dropDownItems}
-								label="Dashboard"
-							/>
+							<DropDownMenu items={dropDownItems} />
 						</li>
 					</ul>
 					{/* <ConnectButton /> */}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 interface Props {
 	//boolean to always open ddm (for presentation)
@@ -19,26 +19,32 @@ export interface DDMItem {
 
 const DropDownMenu = (props: Props) => {
 	const [isOpen, setIsOpen] = useState(false);
-
 	return (
-		<div className="relative inline-block text-left font-bebas">
+		<div className="relative inline-block text-left">
 			<div>
 				<button
 					type="button"
 					onClick={() => setIsOpen(!isOpen)}
+					className={` ${
+						props.withBackground
+							? "border border-gray-300 bg-white shadow-sm dark:bg-gray-800"
+							: ""
+					} flex w-full items-center justify-center rounded-md  px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-100 dark:text-gray-50 dark:hover:bg-gray-500`}
 					id="options-menu"
-					className="hover:cut-border flex items-center justify-center px-4 py-1 text-base tracking-widest hover:text-white xl:text-lg"
 				>
 					{props.label}
-					<svg
-						width="20"
-						height="20"
-						fill="currentColor"
-						viewBox="0 0 1792 1792"
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<path d="M1408 704q0 26-19 45l-448 448q-19 19-45 19t-45-19l-448-448q-19-19-19-45t19-45 45-19h896q26 0 45 19t19 45z"></path>
-					</svg>
+
+					{props.icon || (
+						<svg
+							width="20"
+							height="20"
+							fill="currentColor"
+							viewBox="0 0 1792 1792"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path d="M1408 704q0 26-19 45l-448 448q-19 19-45 19t-45-19l-448-448q-19-19-19-45t19-45 45-19h896q26 0 45 19t19 45z" />
+						</svg>
+					)}
 				</button>
 			</div>
 
@@ -61,7 +67,7 @@ const DropDownMenu = (props: Props) => {
 										item.icon
 											? "flex items-center"
 											: "block"
-									} block px-4 py-2 text-lg tracking-wide text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-100 dark:hover:bg-gray-600 dark:hover:text-white`}
+									} text-md block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-100 dark:hover:bg-gray-600 dark:hover:text-white`}
 									role="menuitem"
 								>
 									{item.icon}

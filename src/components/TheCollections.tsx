@@ -36,14 +36,14 @@ const TheCollections = () => {
 			bg: "bg-purple-500",
 			title: "Pixel",
 			subTitle: "The Pixel Collection",
-			collectionSize: "?",
+			collectionSize: "7,777",
 			desc: "Coming Soon!",
 		},
 		{
 			bg: "bg-red-500",
 			title: "1:1",
 			subTitle: "The Honorary Collection",
-			collectionSize: "?",
+			collectionSize: "10+",
 			desc: "Coming Soon!",
 		},
 	];

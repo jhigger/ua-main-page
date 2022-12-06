@@ -38,6 +38,7 @@ const TheCollections = () => {
 			subTitle: "The Pixel Collection",
 			collectionSize: "7,777",
 			desc: "Coming Soon!",
+			image: "/assets/pixel.png",
 		},
 		{
 			bg: "bg-red-500",
@@ -45,6 +46,7 @@ const TheCollections = () => {
 			subTitle: "The Honorary Collection",
 			collectionSize: "10+",
 			desc: "Coming Soon!",
+			image: "/assets/honorary.png",
 		},
 	];
 

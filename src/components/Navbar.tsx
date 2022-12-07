@@ -11,7 +11,7 @@ const Navbar = () => {
 		{ name: "Holders", link: "https://holders.utilityape.com/" },
 		{ name: "Mutate", link: "https://mutate.utilityape.com/" },
 		{ name: "Raid", link: "https://pay-to-raid.utilityape.com/" },
-		{ name: "Dashboard", link: "http://dashboard.utilityape.com/" },
+		{ name: "Client Dashboard", link: "http://dashboard.utilityape.com/" },
 	];
 
 	const dropDownItems: DDMItem[] = [

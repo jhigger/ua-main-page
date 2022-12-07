@@ -18,7 +18,7 @@ const TheCollections = () => {
 			title: "Gen 1 Apes",
 			subTitle: "The Generation 1 Collection",
 			collectionSize: "3,600",
-			desc: "The Gen 1 NFTs allow holders to engage-and-earn with our own bots on our Utility APE server, and also provide discounts for implementation of these bots on other servers.",
+			desc: "The Gen 1 NFT allows holders to engage-and-earn with our bots on the Utility APE server and provides discounts for implementation of these bots on other servers.",
 			marketPlace: "https://www.magiceden.io/marketplace/utility_ape",
 			image: "/assets/UA-Gen1.png",
 		},
@@ -27,7 +27,7 @@ const TheCollections = () => {
 			title: "Gen 2 Apes",
 			subTitle: "The Generation 2 Collection",
 			collectionSize: "3,000",
-			desc: "The Gen 2 NFTs holder receive double the benefits of a single Gen 1 ape as well as additional perks not present in Gen 1 such as revenue sharing.",
+			desc: "The Gen 2 NFT provides holders with higher engage-to-earn rates and discounts compared to Gen 1 apes. It also provides additional perks such as tokens earned through staking.",
 			marketPlace:
 				"https://www.magiceden.io/marketplace/utility_ape_gen_2",
 			image: "/assets/UA-Gen2.png",
@@ -45,7 +45,21 @@ const TheCollections = () => {
 			title: "1:1",
 			subTitle: "The Honorary Collection",
 			collectionSize: "10+",
-			desc: "Coming Soon!",
+			desc: (
+				<>
+					An honorary collection from Utility Ape, check out the perks
+					of these NFTs updated via{" "}
+					<a
+						href="http://holders.utilityape.com"
+						className="underline"
+						target="_blank"
+						rel="noreferrer"
+					>
+						Holder&apos;s page
+					</a>{" "}
+					. Receive perks similar to our GEN 2 collection.
+				</>
+			),
 			image: "/assets/honorary.png",
 		},
 	];
@@ -78,7 +92,7 @@ type CollectionItemProps = {
 	title: string;
 	subTitle: string;
 	collectionSize: string;
-	desc: string;
+	desc: string | JSX.Element;
 	marketPlace?: string;
 	image?: string;
 };

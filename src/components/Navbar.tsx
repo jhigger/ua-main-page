@@ -16,6 +16,10 @@ const Navbar = () => {
 
 	const dropDownItems: DDMItem[] = [
 		{
+			label: "Sniper Tools",
+			link: "https://utilityape.soltools.xyz/",
+		},
+		{
 			label: "Coming soon!",
 		},
 	];

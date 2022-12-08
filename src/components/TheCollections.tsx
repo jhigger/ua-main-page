@@ -37,7 +37,7 @@ const TheCollections = () => {
 			title: "Pixel",
 			subTitle: "The Pixel Collection",
 			collectionSize: "7,777",
-			desc: "Coming Soon!",
+			desc: "Inspired by past pixel collections, UA Pixels provide similar GEN 2 perks seen on our holder page, allowing GEN 2 holders to receive Pixel NFTs for free.",
 			image: "/assets/pixel.png",
 		},
 		{

@@ -45,7 +45,7 @@ const TheCollections = () => {
 			title: "Kong Solos",
 			subTitle: "The Honorary Collection",
 			collectionSize: "10+",
-			desc: "The 1:1 collection consists of a series of apes created by various artists in collaboration with other projects. These one-of-a-kind apes are auctioned off using $BANANA.",
+			desc: "The 1:1 collection consists of a series of apes created by various artists in collaboration with other projects. These one-of-a-kind apes are auctioned off using $BANANA and the Magic Eden Auction.",
 			image: "/assets/honorary.png",
 		},
 	];

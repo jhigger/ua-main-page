@@ -18,7 +18,7 @@ const TheCollections = () => {
 			title: "Gen 1 Apes",
 			subTitle: "The Generation 1 Collection",
 			collectionSize: "3,600",
-			desc: "The Gen 1 NFT allows holders to engage-and-earn with our bots on the Utility APE server and provides discounts for implementation of these bots on other servers.",
+			desc: "Incubated apes that can be combined with other Gen 1s and potions to mutate into a GEN 2 apes. These apes were the original Utility Ape collection and are deflationary by nature.",
 			marketPlace: "https://www.magiceden.io/marketplace/utility_ape",
 			image: "/assets/UA-Gen1.png",
 		},
@@ -27,39 +27,25 @@ const TheCollections = () => {
 			title: "Gen 2 Apes",
 			subTitle: "The Generation 2 Collection",
 			collectionSize: "3,000",
-			desc: "The Gen 2 NFT provides holders with higher engage-to-earn rates and discounts compared to Gen 1 apes. It also provides additional perks such as tokens earned through staking.",
+			desc: "The preeminent Utility Ape collection is GEN 2. It consists of 2,200 possibly mutated apes and 800 minted apes. This collection provides the greatest benefits to holders.",
 			marketPlace:
 				"https://www.magiceden.io/marketplace/utility_ape_gen_2",
 			image: "/assets/UA-Gen2.png",
 		},
 		{
 			bg: "bg-purple-500",
-			title: "Pixel",
+			title: "Transcendent Apes",
 			subTitle: "The Pixel Collection",
 			collectionSize: "7,777",
-			desc: "Inspired by past pixel collections, UA Pixels provide similar GEN 2 perks seen on our holder page, allowing GEN 2 holders to receive Pixel NFTs for free.",
+			desc: "Pixel Apes are pixelated apes that take pixel art to the next level. Not only do they look great, but they also provide rewards to holders. While the majority of these NFTs can be minted using Utility Apes' $BANANA token, 600 are reserved for minting for 0.69 SOL a piece.",
 			image: "/assets/pixel.png",
 		},
 		{
 			bg: "bg-red-500",
-			title: "1:1",
+			title: "Kong Solos",
 			subTitle: "The Honorary Collection",
 			collectionSize: "10+",
-			desc: (
-				<>
-					An honorary collection from Utility Ape, check out the perks
-					of these NFTs updated via{" "}
-					<a
-						href="http://holders.utilityape.com"
-						className="underline"
-						target="_blank"
-						rel="noreferrer"
-					>
-						Holder&apos;s page
-					</a>{" "}
-					. Receive perks similar to our GEN 2 collection.
-				</>
-			),
+			desc: "The 1:1 collection consists of a series of apes created by various artists in collaboration with other projects. These one-of-a-kind apes are auctioned off using $BANANA.",
 			image: "/assets/honorary.png",
 		},
 	];

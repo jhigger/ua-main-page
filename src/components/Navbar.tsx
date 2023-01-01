@@ -23,6 +23,10 @@ const Navbar = () => {
 			label: "Staking",
 			link: "https://stake.utilityape.com/",
 		},
+		{
+			label: "Pixel Claim",
+			link: "https://pixel.utilityape.com/",
+		},
 	];
 
 	return (

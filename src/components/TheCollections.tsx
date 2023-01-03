@@ -5,24 +5,6 @@ import SectionHeading from "./SectionHeading";
 const TheCollections = () => {
 	const collections = [
 		{
-			bg: "bg-green-500",
-			title: "Utility Potions",
-			subTitle: "The Potion Collection",
-			collectionSize: "1,700",
-			desc: "It appears that these potions have some kind of effect on the incubated ape.",
-			marketPlace: "https://www.magiceden.io/marketplace/utility_potion",
-			image: "/assets/UA-potion01.png",
-		},
-		{
-			bg: "bg-blue-500",
-			title: "Gen 1 Apes",
-			subTitle: "The Generation 1 Collection",
-			collectionSize: "3,600",
-			desc: "Incubated apes that can be combined with other Gen 1s and potions to mutate into a GEN 2 apes. These apes were the original Utility Ape collection and are deflationary by nature.",
-			marketPlace: "https://www.magiceden.io/marketplace/utility_ape",
-			image: "/assets/UA-Gen1.png",
-		},
-		{
 			bg: "bg-indigo-500",
 			title: "Gen 2 Apes",
 			subTitle: "The Generation 2 Collection",
@@ -38,7 +20,17 @@ const TheCollections = () => {
 			subTitle: "The Pixel Collection",
 			collectionSize: "7,777",
 			desc: "Pixel Apes are pixelated apes that take pixel art to the next level. Not only do they look great, but they also provide rewards to holders. While the majority of these NFTs can be minted using Utility Apes' $BANANA token, 600 are reserved for minting for 0.69 SOL a piece.",
+			marketPlace: "https://magiceden.io/marketplace/ua_pixel",
 			image: "/assets/pixel.png",
+		},
+		{
+			bg: "bg-blue-500",
+			title: "Gen 1 Apes",
+			subTitle: "The Generation 1 Collection",
+			collectionSize: "3,600",
+			desc: "Incubated apes that can be combined with other Gen 1s and potions to mutate into a GEN 2 apes. These apes were the original Utility Ape collection and are deflationary by nature.",
+			marketPlace: "https://www.magiceden.io/marketplace/utility_ape",
+			image: "/assets/UA-Gen1.png",
 		},
 		{
 			bg: "bg-red-500",
@@ -46,7 +38,17 @@ const TheCollections = () => {
 			subTitle: "The Honorary Collection",
 			collectionSize: "10+",
 			desc: "The 1:1 collection consists of a series of apes created by various artists in collaboration with other projects. These one-of-a-kind apes are auctioned off using $BANANA and the Magic Eden Auction.",
+			marketPlace: "https://magiceden.io/marketplace/uahonorary",
 			image: "/assets/honorary.png",
+		},
+		{
+			bg: "bg-green-500",
+			title: "Utility Potions",
+			subTitle: "The Potion Collection",
+			collectionSize: "1,700",
+			desc: "It appears that these potions have some kind of effect on the incubated ape.",
+			marketPlace: "https://www.magiceden.io/marketplace/utility_potion",
+			image: "/assets/UA-potion01.png",
 		},
 	];
 

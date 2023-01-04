@@ -9,12 +9,17 @@ const Navbar = () => {
 	const navItems = [
 		{ name: "Client", link: "http://client.utilityape.com/" },
 		{ name: "Holders", link: "https://holders.utilityape.com/" },
-		{ name: "Mutate", link: "https://mutate.utilityape.com/" },
 		{ name: "Raid", link: "https://pay-to-raid.utilityape.com/" },
 		{ name: "Client Dashboard", link: "http://dashboard.utilityape.com/" },
+		{
+			name: "Coinflip",
+			link: "https://degencoinflip.com/utilityape",
+			textColor: "text-yellow-500",
+		},
 	];
 
 	const dropDownItems: DDMItem[] = [
+		{ label: "Mutate", link: "https://mutate.utilityape.com/" },
 		{
 			label: "Sniper Tools",
 			link: "https://utilityape.soltools.xyz/",
@@ -43,6 +48,7 @@ const Navbar = () => {
 							state ? "block" : "hidden"
 						}`}
 					>
+						{/* mobile */}
 						<ul className="items-center justify-center md:flex">
 							{navItems.map((item, idx) => {
 								return (
@@ -78,38 +84,37 @@ const Navbar = () => {
 							{state ? <CloseIcon /> : <MenuIcon />}
 						</button>
 					</div>
-					<ul className="pointer-events-auto ml-auto hidden font-bebas uppercase sm:flex">
+					<div className="pointer-events-auto ml-auto hidden font-bebas uppercase sm:flex">
 						<NavItemContainer>
-							<li className="my-auto mx-4 flex h-full items-center align-middle">
-								{navItems.map((item, idx) => {
-									if (idx === navItems.length - 1) {
-										return (
+							<ul className="my-auto mx-4 flex h-full items-center align-middle">
+								<li>
+									<DropDownMenu
+										label={
 											<div
-												key="last-item"
-												className="mr-16"
+												className={
+													"hover:cut-border px-4 py-1 text-base tracking-widest hover:text-white xl:text-lg "
+												}
 											>
-												<NavLink
-													name={item.name}
-													link={item.link}
-												/>
+												Utilities
 											</div>
-										);
-									}
-
+										}
+										items={dropDownItems}
+									/>
+								</li>
+								{navItems.map((item) => {
 									return (
-										<NavLink
-											key={item.name}
-											name={item.name}
-											link={item.link}
-										/>
+										<li key={item.name}>
+											<NavLink
+												name={item.name}
+												link={item.link}
+												textColor={item?.textColor}
+											/>
+										</li>
 									);
 								})}
-							</li>
+							</ul>
 						</NavItemContainer>
-						<li className="absolute right-4 my-auto mx-4 flex h-full items-center align-middle text-white">
-							<DropDownMenu items={dropDownItems} />
-						</li>
-					</ul>
+					</div>
 					{/* <ConnectButton /> */}
 				</div>
 			</div>
@@ -174,10 +179,23 @@ const Announcement = ({ href, text }: { href: string; text: string }) => {
 	);
 };
 
-const NavLink = ({ name, link }: { name: string; link: string }) => {
+const NavLink = ({
+	name,
+	link,
+	textColor,
+}: {
+	name: string;
+	link: string;
+	textColor?: string;
+}) => {
 	return (
 		<Link href={link}>
-			<a className="hover:cut-border px-4 py-1 text-base tracking-widest hover:text-white xl:text-lg">
+			<a
+				className={
+					"hover:cut-border px-4 py-1 text-base tracking-widest hover:text-white xl:text-lg " +
+					textColor
+				}
+			>
 				{name}
 			</a>
 		</Link>

@@ -1,7 +1,7 @@
 interface Props {
 	//boolean to always open ddm (for presentation)
 	forceOpen?: boolean;
-	label?: string;
+	label?: string | JSX.Element;
 	withDivider?: boolean;
 	icon?: JSX.Element;
 	items: DDMItem[];
@@ -27,12 +27,12 @@ const DropDownMenu = (props: Props) => {
 						props.withBackground
 							? "border border-gray-300 bg-white shadow-sm dark:bg-gray-800"
 							: ""
-					} flex w-full items-center justify-center rounded-md  px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-100 dark:text-gray-50 dark:hover:bg-gray-500`}
+					} inline-block rounded-md text-white no-underline `}
 					id="options-menu"
 				>
 					{props.label}
 
-					{props.icon || (
+					{/* {props.icon || (
 						<svg
 							width="20"
 							height="20"
@@ -42,7 +42,7 @@ const DropDownMenu = (props: Props) => {
 						>
 							<path d="M1408 704q0 26-19 45l-448 448q-19 19-45 19t-45-19l-448-448q-19-19-19-45t19-45 45-19h896q26 0 45 19t19 45z" />
 						</svg>
-					)}
+					)} */}
 				</button>
 			</div>
 
@@ -62,7 +62,7 @@ const DropDownMenu = (props: Props) => {
 								href={item.link || "#"}
 								className={`${
 									item.icon ? "flex items-center" : "block"
-								} text-md block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-100 dark:hover:bg-gray-600 dark:hover:text-white`}
+								} text-md m-2 block rounded bg-black px-4 py-4 text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-100 dark:hover:bg-gray-600 dark:hover:text-white`}
 								role="menuitem"
 							>
 								{item.icon}

@@ -32,6 +32,10 @@ const Navbar = () => {
 			label: "Pixel Claim",
 			link: "https://pixel.utilityape.com/",
 		},
+		{
+			label: "Missions",
+			link: "https://missions.utilityape.com/",
+		},
 	];
 
 	return (

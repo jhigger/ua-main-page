@@ -36,6 +36,10 @@ const Navbar = () => {
 			label: "Missions",
 			link: "https://missions.utilityape.com/",
 		},
+		{
+			label: "Stats",
+			link: "https://stats.utilityape.com/",
+		},
 	];
 
 	return (

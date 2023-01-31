@@ -19,7 +19,6 @@ const Navbar = () => {
 	];
 
 	const dropDownItems: DDMItem[] = [
-		{ label: "Mutate", link: "https://mutate.utilityape.com/" },
 		{
 			label: "Sniper Tools",
 			link: "https://utilityape.soltools.xyz/",
@@ -27,10 +26,6 @@ const Navbar = () => {
 		{
 			label: "Staking",
 			link: "https://stake.utilityape.com/",
-		},
-		{
-			label: "Pixel Claim",
-			link: "https://pixel.utilityape.com/",
 		},
 		{
 			label: "Missions",

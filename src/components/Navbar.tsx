@@ -1,51 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { useState } from "react";
-import DropDownMenu, { DDMItem } from "./DropDownMenu";
+import { dropDownItems, links } from "../links";
+import DropDownMenu from "./DropDownMenu";
 
 const Navbar = () => {
 	const [state, setState] = useState(false);
-
-	const navItems = [
-		{ name: "Client", link: "http://client.utilityape.com/" },
-		{ name: "Holders", link: "https://holders.utilityape.com/" },
-		{ name: "Raid", link: "https://discord.com/invite/utilityape" },
-		{ name: "Client Dashboard", link: "http://dashboard.utilityape.com/" },
-		{
-			name: "Coinflip",
-			link: "https://degencoinflip.com/utilityape",
-			textColor: "text-yellow-500",
-		},
-	];
-
-	const dropDownItems: DDMItem[] = [
-		{
-			label: "Sniper Tools",
-			link: "https://utilityape.soltools.xyz/",
-		},
-		{
-			label: "Staking",
-			link: "https://stake.utilityape.com/",
-		},
-		{
-			label: "Missions",
-			link: "https://missions.utilityape.com/",
-		},
-		{
-			label: "Stats",
-			link: "https://stats.utilityape.com/",
-		},
-	];
 
 	return (
 		<nav className="container sticky top-0 z-20 mx-auto w-full">
 			<div className="absolute mt-6 w-full">
 				<div className="flex flex-row justify-between gap-2 px-4">
 					<Logo />
-					{/* <Announcement
-						href="#"
-						text="Marmalade, our art commission marketplace is now live!"
-					/> */}
 					<div
 						className={`rounded-3xl bg-black p-2 ${
 							state ? "block" : "hidden"
@@ -53,14 +19,14 @@ const Navbar = () => {
 					>
 						{/* mobile */}
 						<ul className="items-center justify-center md:flex">
-							{navItems.map((item, idx) => {
+							{links.map((item, idx) => {
 								return (
 									<li key={idx}>
 										<a
 											className="inline-block py-2 px-4 text-base font-bold text-white no-underline"
-											href={item.link}
+											href={item.href}
 										>
-											{item.name}
+											{item.text}
 										</a>
 									</li>
 								);
@@ -70,9 +36,9 @@ const Navbar = () => {
 									<li key={idx}>
 										<a
 											className="inline-block py-2 px-4 text-base font-bold text-white no-underline"
-											href={item.link || "#"}
+											href={item.href || "#"}
 										>
-											{item.label}
+											{item.text}
 										</a>
 									</li>
 								);
@@ -104,12 +70,12 @@ const Navbar = () => {
 										items={dropDownItems}
 									/>
 								</li>
-								{navItems.map((item) => {
+								{links.map((item) => {
 									return (
-										<li key={item.name}>
+										<li key={item.text}>
 											<NavLink
-												name={item.name}
-												link={item.link}
+												name={item.text}
+												link={item.href}
 												textColor={item?.textColor}
 											/>
 										</li>
@@ -118,7 +84,6 @@ const Navbar = () => {
 							</ul>
 						</NavItemContainer>
 					</div>
-					{/* <ConnectButton /> */}
 				</div>
 			</div>
 		</nav>
@@ -151,37 +116,6 @@ const Logo = () => {
 	);
 };
 
-const Announcement = ({ href, text }: { href: string; text: string }) => {
-	return (
-		<a className="pointer-events-auto mr-auto hidden lg:block" href={href}>
-			<NavItemContainer>
-				<div className="my-auto mr-4 flex h-full items-center">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						fill="none"
-						viewBox="0 0 24 24"
-						strokeWidth="2"
-						stroke="currentColor"
-						aria-hidden="true"
-						className="ml-3 mr-2 h-5 w-5 xl:ml-4 xl:mr-3 xl:h-6 xl:w-6"
-					>
-						<path
-							strokeLinecap="round"
-							strokeLinejoin="round"
-							d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"
-						></path>
-					</svg>
-					<div className="w-[20vw] xl:w-[30vw]">
-						<div className="flex h-6 items-center overflow-hidden truncate px-1 font-bebas text-lg tracking-widest xl:text-xl">
-							{text}
-						</div>
-					</div>
-				</div>
-			</NavItemContainer>
-		</a>
-	);
-};
-
 const NavLink = ({
 	name,
 	link,
@@ -202,20 +136,6 @@ const NavLink = ({
 				{name}
 			</a>
 		</Link>
-	);
-};
-
-const ConnectButton = () => {
-	return (
-		<div className="pointer-events-auto mx-4 flex flex-shrink-0 font-bebas sm:mx-0">
-			<button
-				className="cut-corners hidden h-full w-full flex-row items-center justify-center border-y-2 border-white border-opacity-20 py-2.5 px-4 text-lg uppercase
-					leading-loose tracking-widest text-white hover:border-black hover:bg-black hover:text-black before:hover:bg-neutral-100 before:hover:bg-opacity-100 sm:flex sm:text-base xl:text-lg"
-				type="button"
-			>
-				Connect Wallet
-			</button>
-		</div>
 	);
 };
 

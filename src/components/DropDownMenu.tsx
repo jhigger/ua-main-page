@@ -10,19 +10,17 @@ interface Props {
 
 export interface DDMItem {
 	icon?: JSX.Element;
-	label: string;
+	text: string;
 	desc?: string;
-	link?: string;
+	href?: string;
 }
 
 const DropDownMenu = (props: Props) => {
-	// const [isOpen, setIsOpen] = useState(true);
 	return (
 		<div className="group relative inline-block text-left">
 			<div>
 				<button
 					type="button"
-					// onClick={() => setIsOpen(!isOpen)}
 					className={` ${
 						props.withBackground
 							? "border border-gray-300 bg-white shadow-sm dark:bg-gray-800"
@@ -31,18 +29,6 @@ const DropDownMenu = (props: Props) => {
 					id="options-menu"
 				>
 					{props.label}
-
-					{/* {props.icon || (
-						<svg
-							width="20"
-							height="20"
-							fill="currentColor"
-							viewBox="0 0 1792 1792"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path d="M1408 704q0 26-19 45l-448 448q-19 19-45 19t-45-19l-448-448q-19-19-19-45t19-45 45-19h896q26 0 45 19t19 45z" />
-						</svg>
-					)} */}
 				</button>
 			</div>
 
@@ -58,8 +44,8 @@ const DropDownMenu = (props: Props) => {
 					{props.items.map((item) => {
 						return (
 							<a
-								key={item.label}
-								href={item.link || "#"}
+								key={item.text}
+								href={item.href || "#"}
 								className={`${
 									item.icon ? "flex items-center" : "block"
 								} text-md m-2 block rounded bg-black px-4 py-4 text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-100 dark:hover:bg-gray-600 dark:hover:text-white`}
@@ -68,7 +54,7 @@ const DropDownMenu = (props: Props) => {
 								{item.icon}
 
 								<span className="flex flex-col">
-									<span>{item.label}</span>
+									<span>{item.text}</span>
 									{item.desc && (
 										<span className="text-xs text-gray-400">
 											{item.desc}

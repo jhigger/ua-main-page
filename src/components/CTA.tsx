@@ -1,20 +1,21 @@
-import { FaBook, FaTwitter, FaDiscord } from "react-icons/fa";
+import { FaBook, FaDiscord, FaTwitter } from "react-icons/fa";
+import { discordLink, twitterLink, whitepaperLink } from "../links";
 
 const CTA = () => {
 	const iconLinks = [
 		{
 			icon: <FaBook />,
-			link: "https://utility-ape.gitbook.io/utility-ape-whitepaper/",
+			link: whitepaperLink,
 			name: "Whitepaper",
 		},
 		{
 			icon: <FaTwitter />,
-			link: "https://twitter.com/utilityapeNFT",
+			link: twitterLink,
 			name: "Twitter",
 		},
 		{
 			icon: <FaDiscord />,
-			link: "https://discord.com/invite/utilityape",
+			link: discordLink,
 			name: "Discord",
 		},
 	];

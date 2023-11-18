@@ -140,14 +140,9 @@ const CollectionItem = ({
 					</div>
 					{marketPlace && (
 						<div className="flex flex-col pt-8">
-							<a
-								href={marketPlace}
-								target="_blank"
-								rel="noreferrer"
-								className="flex cursor-pointer items-center justify-center rounded-full border-4 border-white bg-black py-4 px-8 font-bebas text-sm tracking-widest text-white transition-all enabled:hover:translate-y-0.5 disabled:pointer-events-none disabled:cursor-default md:text-lg lg:text-2xl"
-							>
-								Buy {title}
-							</a>
+							<span className="flex items-center justify-center rounded-full border-4 border-white bg-black py-4 px-8 font-bebas text-sm tracking-widest text-white transition-all enabled:hover:translate-y-0.5 disabled:pointer-events-none disabled:cursor-default md:text-lg lg:text-2xl">
+								Collection Vaulted
+							</span>
 						</div>
 					)}
 				</div>

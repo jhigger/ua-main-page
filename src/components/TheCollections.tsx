@@ -5,7 +5,16 @@ import SectionHeading from "./SectionHeading";
 const TheCollections = () => {
 	const collections = [
 		{
-			bg: "bg-indigo-500",
+			bg: "bg-purple-500",
+			title: "Monk3y",
+			subTitle: "The Generation 3 Collection",
+			collectionSize: "1,100",
+			desc: "Reignited from Ashes, the apes are on a quest for new utilities.",
+			marketPlace: "https://magiceden.io/marketplace/monk3",
+			image: "/assets/monk3yNFT.png",
+		},
+		{
+			bg: "bg-violet-500",
 			title: "Gen 2 Apes",
 			subTitle: "The Generation 2 Collection",
 			collectionSize: "3,000",
@@ -13,9 +22,10 @@ const TheCollections = () => {
 			marketPlace:
 				"https://www.magiceden.io/marketplace/utility_ape_gen_2",
 			image: "/assets/UA-Gen2.png",
+			vaulted: true,
 		},
 		{
-			bg: "bg-purple-500",
+			bg: "bg-indigo-500",
 			title: "Transcendent Apes",
 			subTitle: "The Pixel Collection",
 			collectionSize: "7,777",
@@ -31,6 +41,7 @@ const TheCollections = () => {
 			desc: "Incubated apes that can be combined with other Gen 1s and potions to mutate into a GEN 2 apes. These apes were the original Utility Ape collection and are deflationary by nature.",
 			marketPlace: "https://www.magiceden.io/marketplace/utility_ape",
 			image: "/assets/UA-Gen1.png",
+			vaulted: true,
 		},
 		{
 			bg: "bg-red-500",
@@ -40,6 +51,7 @@ const TheCollections = () => {
 			desc: "The 1:1 collection consists of a series of apes created by various artists in collaboration with other projects. These one-of-a-kind apes are auctioned off using $BANANA and the Magic Eden Auction.",
 			marketPlace: "https://magiceden.io/marketplace/uahonorary",
 			image: "/assets/honorary.png",
+			vaulted: true,
 		},
 		{
 			bg: "bg-green-500",
@@ -49,6 +61,7 @@ const TheCollections = () => {
 			desc: "It appears that these potions have some kind of effect on the incubated ape.",
 			marketPlace: "https://www.magiceden.io/marketplace/utility_potion",
 			image: "/assets/UA-potion01.png",
+			vaulted: true,
 		},
 	];
 
@@ -67,6 +80,7 @@ const TheCollections = () => {
 							desc={item.desc}
 							marketPlace={item.marketPlace}
 							image={item.image}
+							vaulted={item.vaulted}
 						/>
 					);
 				})}
@@ -83,6 +97,7 @@ type CollectionItemProps = {
 	desc: string | JSX.Element;
 	marketPlace?: string;
 	image?: string;
+	vaulted?: boolean;
 };
 const CollectionItem = ({
 	bg,
@@ -92,6 +107,7 @@ const CollectionItem = ({
 	desc,
 	marketPlace,
 	image,
+	vaulted,
 }: CollectionItemProps) => {
 	return (
 		<div
@@ -140,9 +156,20 @@ const CollectionItem = ({
 					</div>
 					{marketPlace && (
 						<div className="flex flex-col pt-8">
-							<span className="flex items-center justify-center rounded-full border-4 border-white bg-black py-4 px-8 font-bebas text-sm tracking-widest text-white transition-all enabled:hover:translate-y-0.5 disabled:pointer-events-none disabled:cursor-default md:text-lg lg:text-2xl">
-								Collection Vaulted
-							</span>
+							{vaulted ? (
+								<span className="flex items-center justify-center rounded-full border-4 border-white bg-black py-4 px-8 font-bebas text-sm tracking-widest text-white transition-all enabled:hover:translate-y-0.5 disabled:pointer-events-none disabled:cursor-default md:text-lg lg:text-2xl">
+									Collection Vaulted
+								</span>
+							) : (
+								<a
+									href={marketPlace}
+									target="_blank"
+									rel="noreferrer"
+									className="flex cursor-pointer items-center justify-center rounded-full border-4 border-white bg-black py-4 px-8 font-bebas text-sm tracking-widest text-white transition-all enabled:hover:translate-y-0.5 disabled:pointer-events-none disabled:cursor-default md:text-lg lg:text-2xl"
+								>
+									Buy {title}
+								</a>
+							)}
 						</div>
 					)}
 				</div>
